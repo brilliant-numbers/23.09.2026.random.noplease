@@ -6,7 +6,7 @@
    the candles heading and how many candles there are, the letter line,
    last year's birthday, the password, and the password hints.
    ===================================================================== */
-var AGE = "17";
+var AGE = 17;
 /* ===================================================================== */
 
 (function(){
