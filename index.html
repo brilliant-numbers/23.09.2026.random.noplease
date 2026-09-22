@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#19181c">
+<title>23.09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked paged">
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="prog" aria-hidden="true"></div>
+
+<!-- ======================= THE GATE ======================= -->
+<div id="gate" role="dialog" aria-label="Password">
+  <div class="phone">
+    <header>
+      <div class="av" aria-hidden="true">b</div>
+      <div class="who"><b>bubbles</b><span id="gStatus">online</span></div>
+    </header>
+    <div class="log" id="gLog" aria-live="polite">
+      <p class="chip-day">Today</p>
+      <div class="msg her">Before anything else.</div>
+      <div class="msg her">Three words and two digits. You already know them.</div>
+    </div>
+    <form id="gForm" autocomplete="off">
+      <input type="password" id="pw" placeholder="Message" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Password">
+      <button id="send" type="submit" aria-label="Send">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z"/></svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<main id="doc">
+<section class="page hero" id="hero" data-ch="0">
+<div class="col">
+<div class="grid">
+<div>
+<p class="stamp seq" data-s="0">15 April 2025, 11:54</p>
+<div class="thread" id="heroThread">
+<div class="msg her seq" data-s="1">now i wanna know what u look like</div>
+<div class="msg him seq" data-s="2">Sigh 👀 I have no pictures 😂😂 literally none</div>
+<p class="stamp r seq" data-s="2">11:55</p>
+</div>
+<p class="dim small seq" data-s="3" style="margin-top:22px">That was the first thing you ever asked me, and I dodged it.<br/>Seventeen months and eight days late, here you go.</p>
+</div>
+<div class="seq" data-s="4"><figure class="ph t1" id="heroPh"><img alt="Mofi, in round gold glasses" src="images/P01.jpg"/></figure></div>
+</div>
+<h1 aria-label="Happy birthday, Treasure." class="title" id="title">
+<span class="ln">Happy <span class="age" data-f="ordinal">X</span>,</span>
+<span class="ln">Treasure.
+      <svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 300 20"><path d="M4 12 C 60 4, 120 18, 180 9 S 270 6, 296 11"></path></svg>
+</span>
+</h1>
+<p class="now seq" data-s="6" id="now"></p>
+<p class="cue seq" data-s="6">Forty-one pages. Tap through them slowly.</p>
+</div>
+</section>
+
+<section class="page " data-ch="0">
+<div class="col">
+<div class="block">
+<h3>On repeat</h3>
+<p>Music is the one thing you called a passion without hedging.</p>
+<div class="thread anim">
+<div class="msg her">Passion: Music<br/>Reason: It's a healer</div>
+<p class="stamp">29 April 2025</p>
+</div>
+<p>Guitar since before I knew you. You got it back on 1 September 2025 and told me within two minutes.</p>
+<div class="chips" id="plist"></div>
+<p class="small dim">Each one opens Spotify.</p>
+<p class="said" style="margin:36px 0 14px">And the one I've been saving for tonight.</p>
+<a class="song" href="https://open.spotify.com/search/I%20Love%20You%20Too%20Much%20Book%20of%20Life" rel="noopener" target="_blank">
+<span aria-hidden="true" class="disc"></span><span><b>I Love You Too Much</b><span>The Book of Life</span></span>
+</a>
+<p class="small dim" style="margin-top:12px">Headphones, ideally. It's midnight.</p>
+</div>
+</div>
+</section>
+
+<section class="page chap" data-ch="1">
+<div class="col">
+<h2><span class="ord">Part one of four</span>How we<br/>got here</h2>
+<p class="lede">In order, from the call nobody recorded to the year that hasn't started yet.</p>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">Feb 2025</p>
+<div class="body">
+<p>Before any of this there was a college applications group and a stranger who needed someone to mock-interview him for Princeton.</p>
+<p>You volunteered. It happened on a call. I remember thinking you sounded far too composed for someone my age, and I remember liking your voice long before I had any idea what you looked like.</p>
+<div class="blank">No screenshot of that exists.<br/>Those chats are gone.</div>
+<p class="dim small">Everything after it got written down. All of it.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">15 April<small>2025</small></p>
+<div class="body">
+<p>The oldest surviving message between us is you complaining that strangers had seen your pictures.</p>
+<div class="thread anim">
+<div class="msg her">i have no digital footprint.. u can literally only find my pics on my moms sm handles lol</div>
+<div class="msg her">ik boys hate pics and all</div>
+<div class="msg her">but none is wild😂😂😂</div>
+</div>
+<p class="small dim">Two people with no photographs (one on a phone, the other on social media), agreeing they had no photographs.</p>
+<div class="pair">
+<figure class="ph t2 crop"><img alt="Mofi, mirror selfie" src="images/P03.jpg"/></figure>
+<figure class="ph t3 crop"><img alt="Treasure, mirror selfie" src="images/P24.jpg"/></figure>
+</div>
+<p class="small dim">We got over it. Hundreds of pictures exist now and I had to leave a lot out.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">20 April<small>2025</small></p>
+<div class="body">
+<div class="thread anim">
+<div class="msg her">i v a chin dimple</div>
+<div class="msg her">and 4 dahlia dimples actually</div>
+<div class="msg her">two cheek dimples</div>
+<div class="msg him">I wish I had dimples😭😭</div>
+<p class="stamp r">09:06</p>
+</div>
+<p class="said">Five in total, and you told me they only all show at once when you are very happy.</p>
+<div class="choices"><button class="btn" id="dimBtn" type="button">Count them</button></div>
+<div aria-hidden="true" class="dots"><span></span><span></span><span></span><span></span><span></span></div>
+<p aria-live="polite" class="small dim" id="dimOut"></p>
+<figure class="ph t3" style="max-width:320px;margin-top:22px"><img alt="Treasure smiling, frangipani in her hair" src="images/P20.jpg"/><figcaption>Evidence.</figcaption></figure>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">24 April<small>2025</small></p>
+<div class="body">
+<p>Nine days in I asked you a pile of questions. You answered every one without pausing.</p>
+<div class="thread anim">
+<div class="msg her">my favorite food is Fried rice.. said this in the morning<br/>Favorite color.. Lavender.. any purple goes tbh but i prefer lavender the most</div>
+</div>
+<p class="small dim">You wrote the colour scheme of this page sixteen months before it existed. Everything lavender here is your instruction.</p>
+<div class="thread anim">
+<div class="msg her">i can cook almost anything in Nigerian cuisine... but my fried rice never.. like neverrr fails... no matter how sick or unwilling i am</div>
+</div>
+<div class="pair">
+<figure class="ph t1 crop"><img alt="Treasure in an ankara vest" src="images/P19.jpg"/></figure>
+<figure class="ph t2 crop"><img alt="Treasure outdoors under a blue sky" src="images/P29.jpg"/></figure>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">20 May<small>2025</small></p>
+<div class="body">
+<p>You mentioned this once, in passing, between two other things, the way you mention everything important.</p>
+<div class="thread anim">
+<div class="msg her">but the brand comes first..<br/>i'm trying to compile designs for my debut fashion show..<br/>still a whole year away but i like to be prepared</div>
+</div>
+<p>A whole year away and you were already compiling. Then you lost the sketchbook, and what upset you was that it held the design for your sweet sixteen dress.</p>
+<div class="thread anim">
+<div class="msg her">the smart kids should go and build roads.. then use the money to buy my designs<br/>e ma pami🤧</div>
+<p class="stamp">11 July 2025</p>
+</div>
+<p>That year is up. Whatever you do with it next, I have been watching you prepare since the fifth week I knew you.</p>
+<div class="thread anim">
+<div class="msg him">Consider it my investment in your possible fashion brand line ( mind you I'll collect it back in the future with interest ... inflation accounted for too!)</div>
+<p class="stamp r">6 February 2026</p>
+</div>
+<p class="small dim">That offer stands. I will still be charging interest.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">12 July<small>2025</small></p>
+<div class="body">
+<p>Someone asked me to describe the girl I liked. I refused to give a name and wrote this instead.</p>
+<div class="thread anim">
+<div class="msg him long">Dark-skinned, 5'8, dimples that do too much when she smiles. Sleeps like she's got a bedtime contract with God; wakes up early too, somehow. Sings, writes, plays guitar (still learning tho), and lowkey has a book cooking on the side. Art + science? Yeah, she's one of those rare ones. Has a big brain, and a heart that actually listens. Also? Civil engineering… because why not be beautiful and build bridges.</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">22 August<small>2025</small></p>
+<div class="body">
+<div class="thread anim">
+<div class="msg her">My space is precious…. My collection of your pictures can't be infiltrated with other faces</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">26 August<small>2025</small></p>
+<div class="body">
+<p>I said I love you first. On Instagram, of all places. The next day you set terms.</p>
+<div class="thread anim">
+<div class="msg her">Dw I'll soon start making you work for my 'I love you's. Her Majesty's words are priceless 😝😌</div>
+<p class="stamp">27 August 2025</p>
+</div>
+<p class="small dim">The first one written down in our chat is from 28 August, at 03:12.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page wine" data-ch="1">
+<div class="col">
+<article class="ev wine">
+<p class="when">September<small>2025</small></p>
+<div class="body">
+<p>The visa was denied. We stopped speaking for a while.</p>
+<p>The longest and most careful messages in this entire archive were written that month, by both of us, mostly between two and five in the morning.</p>
+<div class="thread anim">
+<div class="msg her">I won't leave… months, years, days, weeks, I'll still be here… not waiting, but growing</div>
+<p class="stamp">9 September 2025, 21:48</p>
+</div>
+<p>I'm not going to dress that month up. It was bad. Everything after it only exists because we got through it.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">28 September<small>2025</small></p>
+<div class="body">
+<p>Before we were anything official I set up a recurring Zoom so we could watch films together.</p>
+<figure class="ph t2" style="margin:22px 0"><img alt="Zoom invitation: Topic Movies, every week on Saturday, 110 occurrences" src="images/P30.jpg"/></figure>
+<p>I could have booked one. I could have booked ten. I booked a hundred and ten Saturdays, a little over two years, and sent it to a girl who was not yet my girlfriend.</p>
+<div aria-hidden="true" class="sats" id="sats"></div>
+<div class="legend"><span class="g"><b id="satCount">—</b> gone by since 4 October 2025</span><span>still ahead</span></div>
+<p class="said">There are still <span id="satLeft">—</span> left on that calendar. I intend to use them.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">9 October<small>2025</small></p>
+<div class="body">
+<p>Official. The same day, I tried to be romantic about it.</p>
+<div class="thread anim">
+<div class="msg him">one of these days .. you'll wake up .. and I'll be right beside you ..  staring at you</div>
+<div class="msg her">That just might creep me out a bit… M not the most gentle sleeper</div>
+</div>
+<p class="small dim">Noted. I will be beside you, facing the other way.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">20 November<small>2025</small></p>
+<div class="body">
+<p>Two months after September you sent me this, unprompted, in one go.</p>
+<div class="thread anim">
+<div class="msg her long">November has been a roller coaster<br/><br/>I’ve felt highs that I thought September stole away. I’ve come to terms with a lot of things, I’ve grown out of feeling like I’m not enough.<br/><br/>I’ve also stayed up crying. Wondering if I’d get a repeat of last year. I’ve been scared of trying. Tired of getting up to follow a routine that I don’t know where it’ll lead me.<br/><br/>But above all I’ve learned to focus on me. To damn my consequences and try, to not care what anyone says or thinks… and I’ve made decisions only the gap year could help me make</div>
+</div>
+<p class="said" style="margin-top:22px">You were <span class="age" data-f="lastYearWord">X</span> when you wrote that. I was <span class="age" data-f="lastYearWord">X</span> once too and I did not have it in me.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">9 December<small>2025</small></p>
+<div class="body">
+<p>We have not missed a single day since.</p>
+<div class="num" data-live="streak" id="streak">—</div>
+<p class="small dim">consecutive days, still counting as you read this</p>
+<p>Thirteen separate streaks in this archive. Twelve of them ended. This one has outlasted all twelve put together.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">24 May<small>2026</small></p>
+<div class="body">
+<div class="thread anim">
+<div class="msg him">Babe would you love me if I was a dragon 😪?</div>
+<p class="stamp r">14:00</p>
+</div>
+<p class="small dim">Pick the answer you actually gave.</p>
+<div class="choices" id="dragon">
+<button class="btn" data-ok="1" type="button">Only with lavender eyes</button>
+<button class="btn" data-ok="0" type="button">No, dragons are a lot</button>
+</div>
+<div class="later" id="dragOut">
+<div aria-hidden="true" class="eye">
+<svg viewbox="0 0 120 60">
+<g class="lid">
+<path d="M4 30 Q60 -8 116 30 Q60 68 4 30Z" fill="#2b2a30" stroke="#8f76cf" stroke-width="2"></path>
+<circle cx="60" cy="30" fill="#b89ef2" r="17"></circle>
+<ellipse cx="60" cy="30" fill="#19181c" rx="3.5" ry="14"></ellipse>
+<circle cx="66" cy="23" fill="#f1eef4" opacity=".85" r="3"></circle>
+</g>
+</svg>
+</div>
+<p class="small dim" id="dragVerdict"></p>
+<div class="thread">
+<div class="msg her">Yh I love dragons so if you were a really big one w lavender eyes yes I will</div>
+<div class="msg him">What if I had Golden eyes instead of lavender</div>
+</div>
+<p class="small dim">You never answered that part. I have chosen to read it as a no.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">Summer<small>2026</small></p>
+<div class="body">
+<p>In about three weeks this summer you went through the entire ACOTAR run, started Fourth Wing, and finished it before I could ask how it was going.</p>
+<div class="thread anim">
+<div class="msg her">It’s ACOTAR / ACOMAF / ACOWAR / ACOFAS / and A court of Silver Flames😂</div>
+<div class="msg her">“Fourth Wing” is giving me my spark back</div>
+<div class="msg her">Dragons… mates… bonds… riders… healers… scribes… magic</div>
+<div class="msg her">Tamlin is holding Feyre back in the name of protection</div>
+<p class="stamp">21 July 2026</p>
+</div>
+<p class="small dim">Then Ballad of the Fallen Dragon, and Off Campus, two at a time, on a laptop, at hours no reasonable person is awake.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev">
+<p class="when">September<small>2026</small></p>
+<div class="body">
+<figure class="ph t4" style="max-width:320px"><img alt="Mofi on his first day back at Princeton" src="images/P07.jpg"/><figcaption>D1Y2. Day one, year two. You were the first person I told.</figcaption></figure>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page ev-page" data-ch="1">
+<div class="col">
+<article class="ev future">
+<p class="when">Next year</p>
+<div class="body">
+<p>Regina. Civil engineering.</p>
+<p>You are going to spend your working life making sure things stay up, and designing what people wear while they stand on them. Nobody who has met you finds either half surprising.</p>
+<figure class="ph t3" style="max-width:320px;margin-top:22px"><img alt="Treasure in a checked orange, black and white dress" src="images/P21.jpg"/></figure>
+</div>
+</article>
+</div>
+</section>
+
+<section class="page chap" data-ch="2">
+<div class="col">
+<h2><span class="ord">Part two of four</span>Everything,<br/>counted</h2>
+<p class="lede">From that April morning to this one, every message got kept. Try these three before you look.</p>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<div class="guess">
+<label for="g1">How many messages have we sent each other?</label>
+<div class="row"><input id="g1" inputmode="numeric" placeholder="Your guess" type="number"/><button class="btn" data-g="1" type="button">Check</button></div>
+<div class="later" id="r1"><div class="num" data-to="85175">0</div><p class="small dim" id="o1"></p></div>
+</div>
+<div class="guess">
+<label for="g2">Out of 518 days, how many did we talk on?</label>
+<div class="row"><input id="g2" inputmode="numeric" placeholder="Your guess" type="number"/><button class="btn" data-g="2" type="button">Check</button></div>
+<div class="later" id="r2"><div class="num" data-to="501">0</div><p class="small dim" id="o2"></p>
+<p class="small dim">Seventeen silent days in seventeen months.</p></div>
+</div>
+<div class="guess">
+<label for="g3">How many words, roughly?</label>
+<div class="row"><input id="g3" inputmode="numeric" placeholder="Your guess" type="number"/><button class="btn" data-g="3" type="button">Check</button></div>
+<div class="later" id="r3"><div class="num" data-to="570817">0</div><p class="small dim" id="o3"></p>
+<p class="small dim">A long novel is about a hundred thousand. We have written five and a half of them, mostly about nothing.</p></div>
+</div>
+<p class="said" style="margin-top:34px">You send more messages. I send more words. You say things in five and I take nine to say the same thing.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>What you call me</h3>
+<p class="said" style="font-size:clamp(40px,11vw,62px);line-height:.95;font-weight:700">Mofifoluwa.<br/>Samuel.<br/>Albert.<br/>bubbles.</p>
+<p>Four names for one person, and you pick between them depending on how much trouble I'm in.</p>
+<p class="small dim">bubbles appears 109 times, and exactly once from me, when I was quoting you back to yourself.</p>
+<figure class="ph t4" style="max-width:300px;margin-top:24px"><img alt="Mofi in a grey t-shirt" src="images/P18.jpg"/></figure>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>The court</h3>
+<p>Somewhere along the way you started referring to yourself in the third person and I simply went along with it.</p>
+<div class="thread anim">
+<div class="msg her">Her Majesty shall hereby disappear to return after an hour and prolly a half</div>
+<div class="msg her">Abandoning ur elder sis is a grave offense in her majesty's court</div>
+<div class="msg him">your will be done her majesty</div>
+<p class="stamp r">22 July 2025</p>
+</div>
+<h3 style="margin-top:44px">Every name, counted</h3>
+<div class="bars" id="bars"></div>
+<p class="small dim">Lavender is me. Silver is you. I made you royalty. You made me a soap bubble.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>A test</h3>
+<p>We have spent seventeen months spelling the same words differently and never once mentioned it.</p>
+<div class="quiz" data-ans="t"><b>Who writes “cuz”?</b>
+<div class="choices"><button class="btn" data-p="t" type="button">Treasure</button><button class="btn" data-p="b" type="button">bubbles</button></div>
+<div class="later"><p class="small">You. 948 times. I have written it 43 times and most of those were me copying you.</p></div></div>
+<div class="quiz" data-ans="b"><b>Who writes “sumn”?</b>
+<div class="choices"><button class="btn" data-p="t" type="button">Treasure</button><button class="btn" data-p="b" type="button">bubbles</button></div>
+<div class="later"><p class="small">Me. 464 times. You have never typed it once. You write “smn” instead, 394 times, and I have never typed that.</p></div></div>
+<div class="quiz" data-ans="b"><b>Who writes “goodmorning” as one word?</b>
+<div class="choices"><button class="btn" data-p="t" type="button">Treasure</button><button class="btn" data-p="b" type="button">bubbles</button></div>
+<div class="later"><p class="small">Me. 132 times. You never have. You do write “good night” as two words, 109 times.</p></div></div>
+<p class="small dim" style="margin-top:18px">Two people, one language, zero overlap. Nobody planned this.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>Timing</h3>
+<p>You laugh at the exact wrong moment. Serious announcements, arguments, me trying to be sincere. Every single time.</p>
+<div class="thread anim">
+<div class="msg her">Y do I find it fun to look for trouble at the wrong times😭😂</div>
+<p class="stamp">13 November 2025</p>
+</div>
+<div class="num" data-to="17774">0</div>
+<p class="small dim">laugh markers from you against 12,313 from me. You out-laugh me by nearly half again and you are not even trying.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>The hours nobody else was awake for</h3>
+<div class="num" data-to="12442">0</div>
+<p class="small dim">messages sent between midnight and five in the morning. Almost fifteen percent of everything.</p>
+<p>04:00 is a busier hour for us than ten at night. Five hours between your window and mine, and we have spent most of them refusing to go to sleep.</p>
+<div class="clocks">
+<div class="clock"><div class="t" id="ct1">—</div><div class="l">Where I am</div></div>
+<div class="clock there"><div class="t" id="ct2">—</div><div class="l">Aladanla, Ile Ife</div></div>
+</div>
+<figure class="ph t1" style="max-width:280px;margin-top:10px"><img alt="Treasure late at night, lit by her phone" src="images/P25.jpg"/><figcaption>And this is roughly what you look like at that hour, give or take a bonnet.</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="2">
+<div class="col">
+<div class="block">
+<h3>Any day, at random</h3>
+<p>Five hundred and one days to choose from. Press it as many times as you like.</p>
+<div aria-live="polite" id="shuf"><div id="shufDate">Any day</div><div class="dim small" id="shufBody">Press the button.</div></div>
+<button class="btn solid" id="shufBtn" type="button">Pull a day</button>
+</div>
+</div>
+</section>
+
+<section class="page chap" data-ch="3">
+<div class="col">
+<h2><span class="ord">Part three of four</span>You, on<br/>the record</h2>
+<p class="lede">Every version of you that reached my phone. Different hair every few months, the same glasses throughout, the same face doing the thing it does. Tap any of them.</p>
+</div>
+</section>
+
+<section class="page wide" data-ch="3">
+<div class="col">
+<div class="block"><h3>The wall</h3><div class="wall"><figure class="ph t1 crop"><img alt="Treasure" src="images/P22.jpg"/></figure><figure class="ph t2 crop"><img alt="Treasure" src="images/P17.jpg"/></figure><figure class="ph t3 crop"><img alt="Treasure" src="images/P23.jpg"/></figure><figure class="ph t4 crop"><img alt="Treasure" src="images/P27.jpg"/></figure><figure class="ph t2 crop"><img alt="Treasure" src="images/P12.jpg"/></figure><figure class="ph t1 crop"><img alt="Treasure" src="images/P09.jpg"/></figure></div></div>
+</div>
+</section>
+
+<section class="page wide" data-ch="3">
+<div class="col">
+<div class="block"><h3>Still the wall</h3><div class="wall"><figure class="ph t4 crop"><img alt="Treasure" src="images/P16.jpg"/></figure><figure class="ph t3 crop"><img alt="Treasure" src="images/P06.jpg"/></figure><figure class="ph t2 crop"><img alt="Treasure" src="images/P13.jpg"/></figure><figure class="ph t1 crop"><img alt="Treasure in a bonnet" src="images/P10.jpg"/></figure><figure class="ph t3 crop"><img alt="Treasure" src="images/P15.jpg"/></figure><figure class="ph t4 crop"><img alt="Treasure" src="images/P05.jpg"/></figure></div><p class="small dim">Twenty-four of the thirty photographs I had to choose from were of you.</p></div>
+</div>
+</section>
+
+<section class="page " data-ch="3">
+<div class="col">
+<div class="block">
+<h3>And for balance</h3>
+<p>The complete photographic record of me, which as established in April 2025 barely exists.</p>
+<div class="pair">
+<figure class="ph t2 crop"><img alt="Mofi" src="images/P11.jpg"/></figure>
+<figure class="ph t3 crop"><img alt="Mofi in red light" src="images/P02.jpg"/></figure>
+<figure class="ph t1 crop"><img alt="Mofi" src="images/P14.jpg"/></figure>
+<figure class="ph t4 crop"><img alt="Mofi in a green agbada" src="images/P26.jpg"/></figure>
+</div>
+<p class="small dim">The last one is the only time either of us has dressed up for anything.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="3">
+<div class="col">
+<div class="block">
+<h3>Established facts</h3>
+<p class="small dim">You already know every verdict. Tap to confirm them.</p>
+<ul class="verdicts" id="taste"></ul>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="3">
+<div class="col">
+<div class="block">
+<h3>What you make</h3>
+<p>You crochet, and now you're teaching me how to crochet too. I've actually been having so much fun learning it with you, even when I have absolutely no idea what I'm doing. I really look forward to the day when we're no longer long distance and I can just sit next to you, both of us working on our little crochet projects together.</p>
+<div class="thread anim">
+<div class="msg her">Slept… ate… crocheted… watched an anime… rolling on the bed</div>
+<p class="stamp">13 September 2025</p>
+<div class="msg her">Was going to crochet you a jumper 😔</div>
+<p class="stamp">3 November 2025</p>
+</div>
+<p class="said">Going to. Ten months ago. I am still waiting, patiently, and I want it on record that I have never once asked twice.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="3">
+<div class="col">
+<div class="block">
+<h3>And what we put on</h3>
+<div class="thread anim">
+<div class="msg her">Vivo / K-pop demon hunters / Frozen 1 and 2 / and anything in the Barbie series lol</div>
+<p class="stamp">19 July 2025</p>
+<div class="msg her">i've abandoned my Barbie era</div>
+<div class="msg her">I rewatched Barbie as an island princess</div>
+<p class="stamp">Three months later.</p>
+<div class="msg him">😂 oya just introduce me to a barbie series atp</div>
+</div>
+<p class="small dim">Game of Thrones and House of the Dragon on one side, Barbie as an Island Princess on the other, and never once an acknowledgement from you that these are different genres.</p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="3">
+<div class="col">
+<div class="block">
+<h3>Ninety messages about chores</h3>
+<div class="thread anim">
+<div class="msg her">hehe.. perks of being a first born girl ig</div>
+<p class="stamp">30 April 2025</p>
+</div>
+<p>You say it like a joke every time. It comes up ninety times in seventeen months, roughly once a week, which is not a joke.</p>
+<p>Eldest daughter, gap year, everyone's plans running through your hands, and a queue of people who need something from you before you get anywhere near needing anything yourself.</p>
+<p class="said">I noticed. I have been noticing the whole time.</p>
+</div>
+</div>
+</section>
+
+<section class="page chap" data-ch="4">
+<div class="col">
+<h2><span class="ord">Part four of four</span>Tonight</h2>
+<p class="lede">Last few pages. Take your time with these.</p>
+</div>
+</section>
+
+<section class="page " data-ch="4">
+<div class="col">
+<div class="block">
+<h3>In your words, not mine</h3>
+<p>I asked you once what actually makes you feel loved. You listed four things. Tap each one.</p>
+<div id="ticks"></div>
+<p aria-live="polite" class="small dim" id="tickOut" style="margin-top:12px"></p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="4">
+<div class="col">
+<div class="block">
+<h3><span class="age" data-f="Word">X</span> candles</h3>
+<p>One for each year. Blow them out in any order. Each one leaves something behind.</p>
+<div class="cake">
+<div id="cakeRow"></div>
+<div class="tier top"></div>
+<div class="tier bot"></div>
+<div class="plate"></div>
+</div>
+<p class="left" id="left"></p>
+<div aria-live="polite" id="wishBox"><span class="dim small" style="font-family:var(--text)">Tap a candle.</span></div>
+<p class="said" id="candleDone" style="margin-top:10px"></p>
+</div>
+</div>
+</section>
+
+<section class="page " data-ch="4">
+<div class="col">
+<div class="block" id="letterBlock">
+<h3>23 September 2026, 00:00</h3>
+<div class="env-wrap" id="envWrap">
+<button aria-label="Open the letter" class="env" id="env" type="button">
+<span class="back"></span><span class="peek"></span><span class="front"></span>
+<span class="flap"><span aria-hidden="true" class="seal">T</span></span>
+<span class="to">For Treasure</span>
+</button>
+<p class="envhint">Break the seal.</p>
+</div>
+<!-- ===================== THE LETTER (unchanged) ======================== -->
+<div class="letter" id="letter">
+<p class="dateline">23 September 2026, 00:00</p>
+<p>Treasure,</p>
+<p>I'm writing this early, coz if I leave it till midnight I'll try to say all of it in one voice note and lose half of it somewhere around the second minute.</p>
+<p>I met you as a voice. You volunteered to mock-interview a stranger and I sat there thinking you sounded like someone who had already done all of this before. I didn't know your face for months. There's no record of that call anywhere, and I used to hate that. I don't anymore. Everything after it got written down, and it turns out we wrote a lot.</p>
+<p>Here is what a year and a half of that adds up to. You are kind, You are beautiful, You are strong. You carry your family's weight and call it a perk of being a first born. You laugh at exactly the wrong moment, every time, and I have stopped hoping you'll grow out of it. You overthink, and then you apologise for overthinking, which is somehow worse. And you are the only person I have ever met who's made me feel emotions this intense and not feel bad or embarrassed about it.</p>
+<p>I'm not going to promise you anything enormous. Distance is still distance and next year is still next year. What I'll say instead is that there are sixty-odd Saturdays left on a calendar I booked before I had any right to, and I'd like to spend every one of them with you on the other end of it.</p>
+<p>I hope <span class="age" data-f="number">X</span> is good to you. I hope you get to do more of the things you love, make things you're proud of, laugh at things you shouldn't, and keep becoming whoever it is you're slowly turning into. And selfishly, I hope I get to see a lot of that version of you too.</p>
+<p>Happy birthday, you. I'm really glad that voice decided to answer that mock interview.</p>
+<p>I love you and <span class="age" data-f="word">X</span> looks good on you already.</p>
+<p class="sign">bubbles.</p>
+</div>
+<!-- ======================= END OF THE LETTER ========================= -->
+</div>
+</div>
+</section>
+
+<section class="page end" id="end" data-ch="4">
+<div class="col narrow">
+<p class="stamp" style="text-align:center">23 September 2025, 04:57</p>
+<p class="dim small">On your <span class="age" data-f="lastYearOrdinal">X</span>, before the sun was up, you sent me this.</p>
+<p aria-label="I love you feels too shallow" class="shallow" id="shallow"><span class="ln">I love you feels</span><span class="ln">too shallow</span></p>
+<div class="seq" id="endTail">
+<div class="rule" style="max-width:120px;margin:44px auto"></div>
+<p class="said">I kept it for a year.<br/>Happy birthday, Your Majesty.</p>
+<figure class="ph t2"><img alt="Treasure" src="images/P28.jpg"/></figure>
+<button class="btn again" id="again" type="button">Throw the confetti again</button>
+</div>
+</div>
+</section>
+</main>
+<div id="strip" class="off" aria-hidden="true"><span class="nm" id="stripName"></span><span class="dts" id="stripDots"></span></div>
+<p id="more" aria-hidden="true">More below</p>
+<nav id="nav" aria-label="Pages">
+  <button class="btn" id="prev" type="button" aria-label="Previous page">Back</button>
+  <span id="count" aria-live="polite">1 / 1</span>
+  <button class="btn solid" id="next" type="button" aria-label="Next page">Next</button>
+</nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <img id="lbImg" alt="">
+  <button class="x" id="lbX" type="button" aria-label="Close">✕</button>
+  <button class="pv" id="lbP" type="button" aria-label="Previous photo">‹</button>
+  <button class="nx" id="lbN" type="button" aria-label="Next photo">›</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
